@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title></title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen, projection" />
+</head>
+
+<body>
+<div id="wrapper">
+
+  <div id="header"> 
+  <div class="left"> <a href="index.html">Guidelines</a> </div>
+  <div class="right"> <a href="schedule.html">Schedule</a> </div>
+  <h1>Lab 3</h1> </div>
+
+  <div id="content">
+    <div id="section"> <h1>Objectives</h1> </div>
+	<p>
+		After completing this lab you will be able to:
+		<ul>
+			<li>
+				Write an interface given an English description of the requirements.
+			</li>
+			<li>
+				Be able to implement an interface in your code.
+			</li>
+		</ul>
+	</p>
+
+<!-- ***************************** Pre-lab Exercises ******************************* -->
+    <div id="section"> <h1>Pre-Lab Exercises - 4 points</h1> </div>
+    <p>
+    Complete this section individually before beginning the lab activities. This section will be due AT THE TIME YOUR LAB SECTION STARTS.
+    </p>
+	<p>
+		Exercise 1 </br>
+		<b>[2 points] </b>In lecture and in your readings (pp 323 - 329) you have seen examples of interfaces. Given the
+		following description of what all classes implement an interface are required to do create an interface called <tt>PreLab.java</tt>.  
+		Write the interface as if it would be used in a project, i.e. use proper syntax.
+	</p>
+	<p>
+		Classes that implement the interface you create must have methods to access and mutate a String variable called <tt>name</tt> and an integer
+		variable named <tt>count</tt>.  Classes must also have a <tt>toString()</tt> method that returns <tt>name</tt> and <tt>count</tt> as a String.
+		Finally, classes that implement the interface must have a method called <tt>length()</tt> that returns an integer value and take a String as a 
+		parameter.	
+	</p>
+	<p>
+		<b>[2 points]</b> Make 2 multiple choice questions that review concepts about interfaces. These questions should have 5 possible answers, 1 correct and 4 incorrect answers. Use the site <a href = "https://cosc-121-mc.herokuapp.com">here</a>
+	</p>
+	<p>	
+		Hand in your answers before your lab section starts.
+	</p>
+<!-- ********************************* Activity 1 ********************************* -->
+    <div id="section"> <h1>Lab Activity - 8 points</h1> </div>
+   <p>
+<h2>What you are given:</h2>
+<ul>
+	<li>Your work from previous labs</li>
+</ul>
+
+<h2>What you have to do:</h2>
+<ul>
+    <li>In lecture you have examples of interfaces and seen the advantages 
+	    it gives, such as enforcing classes to have certain methods.  Today we will be making 
+	    changes to the <tt>FeedMe</tt> game to take advantage of this fact so that we 
+		can enforce that all items that move on the screen, called <tt>Sprites</tt>, share
+        the same methods.
+	</li>
+	<li><b>[1 point]</b> Rename the current <tt>Sprite</tt> class, call it <tt>Monster</tt>.
+	</li>
+	<li><b>[1 point]</b>Create a new interface and call it <tt>Sprite</tt>.  You create interfaces the
+	    same way as you create classes in Eclipse.  Just click Interface instead of Class.
+	</li>
+	<li><b>[2 points]</b>Make a list of all methods common to BOTH the <tt>Fruit</tt> and <tt>Monster</tt> classes.
+	    Write this list in a .txt file called <tt>similarities.txt</tt>
+	</li>
+	<li><b>[2 points]</b>Add all of these methods to the <tt>Sprite</tt> interface.  
+	</li>
+	<li><b>[2 points]</b>Make the <tt>Monster</tt> and <tt>Fruit</tt> classes use the new <tt>Sprite</tt> interface.  This is
+	    done with the use of the implements keyword.  Make sure that you have no errors in your project.
+	</li>
+	<li>All done!  Now you know that our <tt>Monster</tt> and <tt>Fruit</tt> classes will have to have the methods you
+	    declared in the interface.
+	</li>
+</ul>
+
+<h2>What you should think about during this activity:</h2>
+<ul>
+    <li>What are the other advantages of interfaces?</li>
+	<li>What are some possible disadvantages of interfaces?</li>
+	<li>Why do we need to have no method bodies in interfaces?</li>
+	<li>We didn't use any constants in our interface.  If we had, they would need to have been 
+	    <tt>static</tt>.  Why are constants <tt>static</tt> in interfaces?
+	</li>
+	<li>How are interfaces differeent from inheritance?</li>
+</ul>
+</p>
+    
+<!-- ********************************* Submission ********************************* -->
+    <div id="section"> <h1>What to Submit</h1> </div>
+    <p>
+    When you are ready to have your lab graded, submit the following:
+    </p>
+    <ul>
+    <li> Your <tt>Monster.java</tt> file</li>
+    <li> Your <tt>Fruit.java</tt> file</li>
+    <li> Your <tt>Sprite.java</tt> file</li>
+    <li> Your <tt>similarities.txt</tt> file</li>
+    </ul>
+
+  </div><!-- #content-->
+
+</div><!-- #wrapper -->
+
+  <div id="footer">
+    <div class="left">  <a href="lab02.html">Prev Lab</a> </div>
+    <div class="right"> <a href="lab04.html">Next Lab</a> </div>
+  </div><!-- #footer -->
+
+
+</body>
+</html>

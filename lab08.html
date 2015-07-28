@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title></title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen, projection" />
+</head>
+
+<body>
+<div id="wrapper">
+
+  <div id="header"> 
+	<div class="left"> <a href="index.html">Guidelines</a> </div>
+	<div class="right"> <a href="schedule.html">Schedule</a> </div>
+	<h1>Lab 8</h1> 
+  </div>
+
+  <div id="content">
+    <div id="section"> <h1>Objectives</h1> </div>
+    <p>
+		After completing this lab you will be able to:
+		<ul>
+			<li>
+				Search for an item in a list using a linear search.
+			</li>
+			<li>
+				Search for an item in a sorted collection using a binary search.
+			</li>
+		</ul>
+	</p>
+
+<!-- ***************************** Pre-lab Exercises ******************************* -->
+    <div id="section"> <h1>Pre-Lab Exercises - 4 points</h1> </div>
+    <p>
+		Complete this section before beginning the lab activities.  This section will be due AT THE TIME YOUR LAB SECTION STARTS.
+    </p>
+    <p>
+		This lab will focus on implementing a linear and binary searches.
+	</p>
+	<p>
+		Exercise 1 </br>
+		<b>[1 point] </b> Given the following list of number perform a binary search for 16.  How many steps does it take? Show all work.</br>
+		<p style = "font-size: 150%; text-align: center">1, 3, 4, 5, 7, 11, 14, 16, 19, 24, 26, 34, 47, 64, 73, 75, 1234</p>
+		Exercise 2 </br>
+		<b>[1 point] </b> When is a time when using a linear search would be faster than using a binary search to find one object?    
+	</p>
+	<p>
+		<b>[2 points]</b> Make 2 multiple choice questions that review concepts searching. These questions should have 5 possible answers, 1 correct and 4 incorrect answers. Use the site 
+		<a href = "https://cosc-121-mc.herokuapp.com">here</a>
+	</p>
+	
+    
+<!-- ********************************* Activity ************************************ -->
+	<div id="section"> <h1>Lab Activity - 8 points</h1> </div>
+    <p>
+		<h2>What you are given:</h2>
+		<ul>
+			<li> Your work from the previous labs</li>
+		</ul>
+
+		<h2>What you have to do:</h2>
+		<ul>
+		   <li>
+		   		Today you will be writing your own code to perform a linear search and a binary search. The code you write for the linear search will be used in the game and the code you write for the binary search will be great practice.
+			</li>
+			<li>
+				<b>[1 point]</b> The first thing we will do is to search through all the <tt>Fruit</tt> dropped in a game and determine if each type of <tt>Fruit</tt> you have made is dropped in a single round.  To do this, make a method called <tt>usedFruits()</tt> in the <tt> Drop.java </tt> class and call it whenever a fruit is dropped.  
+			</li>
+			<li>
+				<b>[1 point]</b> In this method, you will search through the list of Fruits used in the game and record if each type of <tt>Fruit</tt> was used.  To store this information make a boolean attribute in the <tt>Drop.java</tt> class for each type of <tt>Fruit</tt> in your game.  Initialize these attributes in the constructor and write accessors(getters) for them. 
+			</li>
+			<li>
+				<b>[1 point]</b> Now get the list of <tt>Fruit</tt> used in the game.  Move through this list once for each type of <tt>Fruit</tt> in your game.  If you find a <tt>Fruit</tt> of that type, set the value of the attribute to true. Remember, this is a doubly linked list so you can move through the list using the <tt>next</tt> attribute at each node. To start at the front of your list you will need to write an accessor for the <tt>front</tt> attribute.
+			</li>
+			<li>
+				<b>[1 point]</b> In <tt>paint()</tt> when the game is over we want to let the player know what types of <tt>Fruit</tt> they found in the game.  For each boolean <tt>Fruit</tt> attribute write a statement that tells the player if they used that type in the current round.  Pay attention to spacing, if you have a large variety of <tt>Fruit</tt> you may want to use a smaller font.
+			</li>
+			<li>
+				<b>[1 point]</b> Now we will move on to writing code for a binary search.  To do this make a new class called <tt>BinarySearch</tt>.  This class will need to have two <tt>int</tt> arrays, one called <tt>temp</tt> and the other <tt>original</tt>.  Initialize these attributes in the constructor.  When you initialize the array, call the <tt>Arrays.sort()</tt> method with the array as the parameter.  You will need to import the <tt>java.util.Arrays</tt> class to do this.  This is because binary search only works on sorted collections.  You will write you own sort method next lab.
+			</li>
+			<li>
+				<b>[2 points]</b> Write a public method called search that takes an <tt>int</tt> parameter and returns a boolean value.  This method will search through the array to find the given value.  To start, call a method to find the half way point of your array, if there is an even number of indicies in your array just round down.  Now compare the value at the halfway point of <tt>temp</tt>.  If it is less than the value, use the <tt>Arrays.copyofRange()</tt> method to reassign <tt>temp</tt> to only it's second half and then recursively call <tt>search</tt>.  Do a similar procedure if the value if greater, only this time use the lower half of <tt>temp</tt>.  If the halfway point equals the value return true.  The final case is that temp is only 1 entry, if this is true and the value does not equal that one entry, return false.  When the search is done, set temp equal to original.
+			</li>
+			<li>
+				<b>[1 point]</b> Finally write a test class for your binary search to make sure that it works. Submit the output from this class as well as the class.
+			</li>
+		</ul>
+		<h2>What you should think about during this activity:</h2>
+		<ul>
+		    <li>
+		    	What advantages does a linear serach have over a binary search?
+		    </li>
+			<li>
+				What other types of searching algorithms do you know of or can think of?  
+			</li>
+			<li>
+				Why is efficiency so important in searching algorithms?  
+			</li>
+		</ul>
+	</p>
+	 <div id="section"> <h1>What to Submit</h1> </div>
+    <p>
+    When you are ready to have your lab graded, submit the following:
+    </p>
+    <ul>
+    	<li><tt>Drop.java</tt></li>
+    	<li><tt>Board.java</tt></li>
+    	<li><tt>BinarySearch.java</tt></li>
+    	<li><tt>TestBinarySearch.java</tt></li>
+    	<li>Output from your test class</li>
+    </ul>
+</div><!-- #content-->
+</div><!-- #wrapper -->
+<div id="footer">
+    <div class="left"> <a href="lab07.html">Prev Lab</a> </div>
+    <div class="right"> <a href="lab09.html">Next Lab</a> </div>
+</div><!-- #footer -->
+</body>
+</html>

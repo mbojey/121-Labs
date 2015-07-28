@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title></title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen, projection" />
+</head>
+
+<body>
+<div id="wrapper">
+
+  <div id="header"> 
+	<div class="left"> <a href="index.html">Guidelines</a> </div>
+	<div class="right"> <a href="schedule.html">Schedule</a> </div>
+	<h1>Lab 9</h1> 
+  </div>
+
+  <div id="content">
+    <div id="section"> <h1>Objectives</h1> </div>
+    <p>
+		After completing this lab you will be able to:
+		<ul>
+			<li>
+				Write code for the merge sort algorithm.
+			</li>
+			<li>
+				Understand the importance of efficient searching.
+			</li>
+		</ul>
+	</p>
+
+<!-- ***************************** Pre-lab Exercises ******************************* -->
+    <div id="section"> <h1>Pre-Lab Exercises - 4 points</h1> </div>
+    <p>
+		Complete this section before beginning the lab activities.  This section will be due AT THE TIME YOUR LAB SECTION STARTS.
+    </p>
+    <p>
+		This lab will focus on implementing a sorting algorithm called merge sort.  You can read about it <a href="http://en.wikipedia.org/wiki/Merge_sort">here</a>
+	</p>
+	<p>
+		Exercise 1 </br>
+		<b>[1 point] </b> In this lab you will be writing a recusive method.  To become familiar with these types of methods trace through the following code with n = 6.  At each iteration record what the current value of total is.
+		<p style = "font-family: courier; padding-left: 12em">
+			public static int total = 1;</br>
+
+			public static int factorial(int n){</br>
+				<p style = "font-family: courier; padding-left: 14em; padding-bottom: 0; padding-top:0">if(n == 0 || n == 1)</p>
+					<p style = "font-family: courier; padding-left: 16em; padding-bottom: 0; padding-top:0">return 1;</p>
+				<p style = "font-family: courier; padding-left: 14em; padding-bottom: 0; padding-top:0">total = n * factorial(n-1);</p>
+				<p style = "font-family: courier; padding-left: 14em; padding-bottom: 0; padding-top:0">return total;</p>
+			<p style = "font-family: courier; padding-left: 12em; padding-bottom: 0; padding-top:0">}</p>
+		</p>
+		The first time that the method is called total would be equal to 6 * factorial(5). Then in the call to factorial(5) total would be equal to 5 * factorial(4).  As these calls finish total would be equals to 5 * 24 = 120 and 6 * 120 = 720. Trace through the rest of the code on your own. 
+	</p>
+	<p>
+		Exercise 2 </br>
+		<b>[1 point] </b> How many times does mergesort need to "split apart" an array of size n?  Remember that we split the array in half every time and stop when there is only one element in the smaller parts.    
+	</p>
+	<p>
+		<b>[2 points]</b> Make 2 multiple choice questions that review concepts from sorting. These questions should have 5 possible answers, 1 correct and 4 incorrect answers. Use the site 
+		<a href = "https://cosc-121-mc.herokuapp.com">here</a>
+	</p>
+	
+    
+<!-- ********************************* Activity ************************************ -->
+	<div id="section"> <h1>Lab Activity - 8 points</h1> </div>
+    <p>
+		<h2>What you are given:</h2>
+		<ul>
+			<li> Your work from the previous labs</li>
+		</ul>
+
+		<h2>What you have to do:</h2>
+		<ul>
+		   <li>
+		   		Today you will be writing your own code to perform a merge sort.
+			</li>
+			<li>
+				<b>[1 point]</b> Start by making a merge sort class, call it <tt>MergeSort.java</tt>.  This class will have two <tt>int</tt> array attributes, one called <tt>values</tt> and one called <tt>temp</tt>.  The constructor will take no parameters. 
+			</li>
+			<li>
+				<b>[1 point]</b> Make a method called <tt>sort()</tt> that takes an <tt>int</tt> array as a parameter.  Set <tt>values</tt> equal to this input array and set <tt>temp</tt> to an array of the same size.  Now call a method <tt>mergesort()</tt>, which we will fill in next, with 0 and the size of the array <tt>values</tt> as the 2 int parameters. 
+			</li>
+			<li>
+				<b>[2 points]</b> Make the <tt>mergesort()</tt> method, it will take parameters as described above.  Check if the first parameter is smaller than the second, if it is then that means that there is still elements in the array between them.  Calculate the middle of the two parameters and store the value in a variable. Now recursively call <tt>mergesort()</tt> twice, once with the small parameter and the middle value and once with the middle value and the large parameter.  This recursive call will seperate each side of the array until there is only one element in each subarray.  Now call a new method, <tt>merge()</tt>, which we will fill in next, with the smaller parameter, the middle value, and the larger parameter.
+			</li>
+			<li>
+				<b>[2 points]</b> Make the <tt>merge()</tt> method, it will take parameters as described above.  Start by copying all values from the indicies between the smallest parameter and the largest parameter from <tt>values</tt> to <tt>temp</tt>.  Declare 2 variables and initialize them to the smallest parameter, also declare 1 variable and initialize it to the middle parameter + 1.  Now, copy the smallest value from either the left or right side of the middle parameter back into <tt>values</tt>.  Make sure you stop when you run out of values on either side.  Finally, copy the remaining values from the side that didn't run out of values into <tt>values</tt>
+			</li>
+			<li>
+				<b>[1 point]</b> Write comments for the methods you just wrote in your own words.  Your TA should be able to just read your comments and know what the method does at each step.
+			</li>
+			<li>
+				<b>[1 point]</b> Now you are done!  Write a test class to test your implementation.  Give the class an array of 10 random integers and print out the result to see if it worked.  It may not work the first time, but that is fine, just ask your TA for help!  Save your output into a file called <tt>output.txt</tt>
+			</li>
+		</ul>
+		<h2>What you should think about during this activity:</h2>
+		<ul>
+			<li>
+				What other types of algorithms could take advantage of this "divide and conquer" approach?  
+			</li>
+			<li>
+				Why is efficiency so important in sorting algorithms?  
+			</li>
+		</ul>
+	</p>
+	 <div id="section"> <h1>What to Submit</h1> </div>
+    <p>
+    When you are ready to have your lab graded, submit the following:
+    </p>
+    <ul>
+    	<li><tt>MergeSort.java</tt></li>
+    	<li><tt>TestMergeSort.java</tt></li>
+    	<li><tt>output.txt</tt></li>
+    </ul>
+</div><!-- #content-->
+</div><!-- #wrapper -->
+<div id="footer">
+    <div class="left"> <a href="lab08.html">Prev Lab</a> </div>
+</div><!-- #footer -->
+</body>
+</html>

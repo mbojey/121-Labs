@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title></title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen, projection" />
+</head>
+
+<body>
+<div id="wrapper">
+
+  <div id="header"> 
+	<div class="left"> <a href="index.html">Guidelines</a> </div>
+	<div class="right"> <a href="schedule.html">Schedule</a> </div>
+	<h1>Lab 7</h1> 
+  </div>
+
+  <div id="content">
+    <div id="section"> <h1>Objectives</h1> </div>
+    <p>
+		After completing this lab you will be able to:
+		<ul>
+			<li>
+				Write an array based Queue.
+			</li>
+			<li>
+				Write a list based Stack.
+			</li>
+		</ul>
+	</p>
+
+<!-- ***************************** Pre-lab Exercises ******************************* -->
+    <div id="section"> <h1>Pre-Lab Exercises - 4 points</h1> </div>
+    <p>
+		Complete this section before beginning the lab activities.  This section will be due AT THE TIME YOUR LAB SECTION STARTS.
+    </p>
+    <p>
+		This lab will focus on implementing a stack using the doubly linked list from last lab.	You will also make a queue using an array.
+	</p>
+	<p>
+		Exercise 1 </br>
+		<b>[1 point] </b> Explain, in your own words, what is the difference between a stack and a queue.</br>
+		Exercise 2 </br>
+		<b>[1 point] </b> What is one instance where you think using a stack would be beneficial? Why? Also, what is one instance where you think using a queue would be beneficial? Why?     
+	</p>
+	<p>
+		<b>[2 points]</b> Make 2 multiple choice questions that review concepts from stacks and queues. These questions should have 5 possible answers, 1 correct and 4 incorrect answers. Use the site 
+		<a href = "https://cosc-121-mc.herokuapp.com">here</a>
+	</p>
+	
+    
+<!-- ********************************* Activity ************************************ -->
+	<div id="section"> <h1>Lab Activity - 8 points</h1> </div>
+    <p>
+		<h2>What you are given:</h2>
+		<ul>
+			<li> Your work from the previous labs</li>
+		</ul>
+
+		<h2>What you have to do:</h2>
+		<ul>
+		   <li>
+		   		Today you will be making your own stack and queue classes.  The underlying data structure to be used in the stack is the doubly linked list you made last week.  We will use an array for the queue.
+			</li>
+			<li>
+				Start by creating a new class, call it <tt>ListStack</tt>. This class will have all the methods of the stack Abstract Data Type(ADT), that is <tt>push()</tt> <tt>pop()</tt> <tt>peek()</tt> <tt>isEmpty()</tt>, we will also have a <tt>size()</tt> method.
+		    </li>
+			<li>
+				<b>[1 point]</b> In the <tt>ListStack</tt> class you will need an attribute of type <tt>List</tt>. Write a constructor to initialize this attribute.  Also write the <tt>size()</tt> and <tt>isEmpty()</tt> methods now.
+		    </li>
+			<li>
+				<b>[1 point]</b> Now fill in the <tt>push()</tt> and <tt>pop()</tt> methods.  Make sure that you are passing the proper parameters and return the correct data.  These methods will be very easy with some of the method you wrote in your <tt>List</tt> class last week.
+		    </li>
+		    <li>
+				<b>[1 point]</b> Write the <tt>peek()</tt> method. 
+		    </li>
+			<li>
+				<b>[1 point]</b> You have now finished all the methods required for the stack ADT.  Now make a new class <tt>ArrayQueue</tt>.  This class will need to have three methods to be a queue, <tt>enqueue()</tt> <tt>dequeue()</tt> <tt>isEmpty()</tt>, we will also have a <tt>size()</tt> method.  Declare two <tt>int</tt> attributes to keep track of the front and back of the queue, initialize these in the constructor.  This class will also need to have an array attribute that can hold <tt>Fruit</tt>. In the constructor initialize this array to whatever size is passed as a parameter.  Also write a <tt>toString()</tt> method to print out the contents of the queue.
+		    </li>
+			<li>
+				<b>[1 point]</b> Start by writing the <tt>enqueue</tt> method.  In this method you will add a <tt>Fruit</tt> to the back of the queue.  After you have added the <tt>Fruit</tt> move the attribute that keeps track of the back of the queue.  Be careful, you need to make sure that you do not go out of bounds on your array.
+			</li>
+			<li>
+				<b>[1 point]</b>Now write the <tt>dequeue</tt> method to remove the first <tt>Fruit</tt> from your array.  When you remove the <tt>Fruit</tt> set the value stored in that index of the array to <tt>null</tt>.  Now increment you <tt>front</tt> attribute, again be careful to no go out of bounds.
+			</li>
+			<li>
+				<b>[2 points]</b>Write the <tt>size()</tt> and <tt>isEmpty()</tt> methods.  Notice that these are more difficult than they may first appear, be caeful to cover all cases.  When these methods are complete add printed warnings to <tt>enqueue</tt> and <tt>dequeue</tt> telling the user when the queue is full or empty.
+		    </li>
+			<li>
+				<b>[1 point]</b>  Write a test class for each of the class you just made.  Make sure to test all methods and all cases when testing the queue.
+		    </li>
+		</ul>
+		<h2>What you should think about during this activity:</h2>
+		<ul>
+		    <li>
+		    	What advantages does a list have over an array?
+		    </li>
+			<li>
+				Do you think using an array or a list is easier when implementing queues and stacks?  What are the advantages of each?
+			</li>
+		</ul>
+	</p>
+	 <div id="section"> <h1>What to Submit</h1> </div>
+    <p>
+    When you are ready to have your lab graded, submit the following:
+    </p>
+    <ul>
+    	<li><tt>List.java</tt></li>
+    	<li><tt>ListStack.java</tt></li>
+    	<li><tt>ArrayQueue.java</tt></li>
+    	<li><tt>TestListStack.java</tt></li>
+    	<li><tt>TestArrayQueue.java</tt></li>
+    	<li>Output from your test classes</li>
+    </ul>
+</div><!-- #content-->
+</div><!-- #wrapper -->
+<div id="footer">
+    <div class="left"> <a href="lab06.html">Prev Lab</a> </div>
+    <div class="right"> <a href="lab08.html">Next Lab</a> </div>
+</div><!-- #footer -->
+</body>
+</html>

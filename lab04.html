@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title></title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen, projection" />
+</head>
+
+<body>
+<div id="wrapper">
+
+<div id="header"> 
+<div class="left"> <a href="index.html">Guidelines</a> </div>
+<div class="right"> <a href="schedule.html">Schedule</a> </div>
+<h1>Lab 4</h1> </div>
+
+  <div id="content">
+    <div id="section"> <h1>Objectives</h1> </div>
+	<p>
+		After completing this lab you will be able to:
+		<ul>
+			<li>
+				Be comfortable working with polymorphism.
+			</li>
+			<li>
+				Understand the benefits and power of polymorphism.
+			</li>
+		</ul>
+	</p>
+
+<!-- ***************************** Pre-lab Exercises ******************************* -->
+    <div id="section"> <h1>Pre-Lab Exercises - 4 points</h1> </div>
+    <p>
+    Complete this section individually before beginning the lab activities. This section will be due AT THE TIME YOUR LAB SECTION STARTS.
+    </p>
+	<p>
+		Exercise 1 </br>
+		<b>[1 point] </b> In your own words describe what polymorphism is.  This should only take a sentence or two.
+	</p>
+	<p>
+		Exercise 2 </br>
+		<b>[1 point] </b> You have an interface called Sprite in your program.  You are therefore able to create a variable of type Sprite i.e.
+		</br>
+		&nbsp&nbsp&nbsp&nbsp&nbsp<tt>Sprite movingThing;</tt>
+		</br>
+		What would be valid types to store in this variable?  That is, what could you fill in the blanks below with?
+		</br>
+		&nbsp&nbsp&nbsp&nbsp&nbsp<tt>movingThing = new ________________(________);</tt>
+		</br>
+	</p>
+	<p>
+		<b>[2 points]</b> Make 2 multiple choice questions that review concepts about polymorphism. These questions should have 5 possible answers, 1 correct and 4 incorrect answers. Use the site <a href = "https://cosc-121-mc.herokuapp.com">here</a>
+	</p> 
+	<p>
+		Hand in your answers before your lab section starts.
+	</p>
+<!-- ********************************* Activity 1 ********************************* -->
+    <div id="section"> <h1>Lab Activity - 8 points</h1> </div>
+   <p>
+<h2>What you are given:</h2>
+<ul>
+	<li>Your work from previous labs</li>
+</ul>
+
+<h2>What you have to do:</h2>
+<ul>
+    <li>Today all of your hard work with interfaces and inheritance will finally pay off.  
+	    You will be working the concept of polymorphism to allow you to drop different types 
+		of fruits with different score values each!  
+	</li>
+	<li><b>[1 point]</b> The first thing you will need to do it to open your <tt>Drop</tt>  
+	    class.  In these classes we will need to make some changes to the targets object. 
+	    Currently it is an <tt>ArrayList</tt> storing <tt>Apple</tt> objects.  We want it to store <tt>Fruit</tt> objects 
+	    so that we can have both types of <tt>Fruit</tt>.
+	</li>
+	<ul>
+	    <li><b>[1 point]</b> You will notice that this change will cause many errors in the code.  
+		    To fix these errors we will need to change the type of objects stored in the <tt>ArrayLists</tt> 
+			in the <tt>Board</tt> class to <tt>Fruit</tt> as well.  This will cause even more errors.
+	    </li>
+	    <li><b>[1 point]</b> To fix these errors we need to update any object type pulled from 
+		    the <tt>ArrayList</tt> to <tt>Fruit</tt> from <tt>Apple</tt>.
+	    </li>
+	</ul>
+	<li>Now you can add any type of fruit you want to the <tt>ArrayList</tt> of fruit to be dropped during 
+	    the game.  Let’s make it so that you get different <tt>Fruit</tt> everytime.
+	</li>
+	<li><b>[1 point]</b>In the <tt>dropIt()</tt> method of the <tt>Drop</tt> class we will want to use the random 
+	    variable r to determine whether to add an <tt>Apple</tt> or a different piece of fruit.  Use the 
+		mod(%) function and a conditional statement to make this dream a reality. 
+	</li>
+	<ul>
+		<li><b>[1 point]</b>Now add a <tt>score</tt> attribute to the <tt>Fruit</tt> class.  Also write a public method
+		    called <tt>getScore()</tt> that, as expected, returns the value of score.
+		</li>
+		<li><b>[1 point]</b>Change the constructor of the <tt>Apple</tt> and other fruit class so that they take
+		    a third <tt>int</tt> parameter that is the number of points the fruit is worth.  Set the <tt>score</tt> attribute
+			to this parameter.
+		</li>
+		<li><b>[1 point]</b>As you add the <tt>Fruit</tt> to the <tt>ArrayList</tt> we need to update to maximum possible 
+		    score.  Create an attribute in the <tt>Drop</tt> class called <tt>possibleScore</tt> and store this value there. 
+			This variable should be <tt>static</tt>.  Write a getter (accessor) for this attribute call it <tt>getPossibleScore()</tt>.
+		</li>
+		<li><b>[1 point]</b>Now you will change how we keep track of the score in the <tt>Board</tt> class and what score
+    		we return to the user.  To do this change the</br><tt>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;score++</br></tt>
+            line in the <tt>checkCollision()</tt> method to instead add the <tt>score</tt> of the current <tt>Fruit</tt> and change the 
+			<tt>dropper.getMax()</tt> call in the <tt>paint()</tt> method to instead show the <tt>possibleScore</tt>.
+		</li>
+	</ul>
+</ul>
+
+<h2>What you should think about during this activity:</h2>
+<ul>
+    <li>What advantages does polymorphism give you in this activity? </li>
+	<li>Would what we have done be possible without polymorphism?  If yes, would it be easier or harder?</li>
+	<li>Are there any disadvantages to polymorphism?  If yes, what are they?</li>
+	<li>In this activity we used polymorphism through inheritance, could we have used polymorphism through interfaces instead?</li>
+</ul>
+</p>
+<!-- ********************************* Submission ********************************* -->
+    <div id="section"> <h1>What to Submit</h1> </div>
+    <p>
+    When you are ready to have your lab graded, submit the following:
+    </p>
+    <ul>
+    <li><tt>Drop.java</tt></li>
+	<li><tt>Board.java</tt></li>
+	<li><tt>Fruit.java</tt></li>
+	<li><tt>Apple.java</tt></li>
+	<li><tt>.java</tt> files for any other fruits you have in your game</li>
+    </ul>
+
+  </div><!-- #content-->
+
+</div><!-- #wrapper -->
+
+  <div id="footer">
+    <div class="left">  <a href="lab03.html">Prev Lab</a> </div>
+    <div class="right"> <a href="lab05.html">Next Lab</a> </div>
+  </div><!-- #footer -->
+
+
+</body>
+</html>

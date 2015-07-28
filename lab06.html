@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title></title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen, projection" />
+</head>
+
+<body>
+<div id="wrapper">
+
+  <div id="header"> 
+	<div class="left"> <a href="index.html">Guidelines</a> </div>
+	<div class="right"> <a href="schedule.html">Schedule</a> </div>
+	<h1>Lab 6</h1> 
+  </div>
+
+  <div id="content">
+    <div id="section"> <h1>Objectives</h1> </div>
+    <p>
+		After completing this lab you will be able to:
+		<ul>
+			<li>
+				Write code for a doubly linked list.
+			</li>
+		</ul>
+	</p>
+
+<!-- ***************************** Pre-lab Exercises ******************************* -->
+    <div id="section"> <h1>Pre-Lab Exercises - 4 points</h1> </div>
+    <p>
+		Complete this section before beginning the lab activities.  This section will be due AT THE TIME YOUR LAB SECTION STARTS.
+    </p>
+    <p>
+		This lab will focus on implementing a doubly linked list.	
+	</p>
+	<p>
+		Exercise 1 </br>
+		<b>[1 point] </b> Using the following diagram, draw the resulting linked list after</br>
+		<ul>
+			<li>i) Inserting '2' before '3' and after '1'</li>
+			<li>ii) Deleting '3'</li>
+		</ul>
+		<p style = "font-size: 150%; text-align: center">1 <=> 3 <=> 4</p>
+		Exercise 2 </br>
+		<b>[1 point] </b> Write a method to insert a node into a singly linked list.  Your method should take a <tt>Node</tt> as a parameter and return nothing.  Insert the node to the beginning of the list.  You can assume that the list class you are using has an attribute <tt>first</tt> that is the first node in the list.  Make sure to handle any special cases.  
+	</p>
+	<p>
+		<b>[2 points]</b> Make 2 multiple choice questions that review concepts from linked lists. These questions should have 5 possible answers, 1 correct and 4 incorrect answers. Use the site 
+		<a href = "https://cosc-121-mc.herokuapp.com">here</a>
+	</p>
+	
+    
+<!-- ********************************* Activity ************************************ -->
+	<div id="section"> <h1>Lab Activity - 11 points</h1> </div>
+    <p>
+		<h2>What you are given:</h2>
+		<ul>
+			<li> Your work from the previous labs</li>
+		</ul>
+
+		<h2>What you have to do:</h2>
+		<ul>
+		   <li>Today you will be making your own linked list.  We will then use this list instead of the <tt>ArrayList</tt> 
+		       currently implemented in the game.
+			</li>
+			<li>Start by creating a new class, call it <tt>List</tt>. Also create a class called <tt>Node</tt>.
+		     	You will be implementing the list using these classes.  Start with the <tt>Node</tt> class.
+		    </li>
+			<li>
+				<b>[1 point]</b>  In your <tt>Node</tt> class you will need three attributes: the <tt>Fruit</tt> to be stored in the <tt>Node</tt>, the next <tt>Node</tt> and the previous <tt>Node</tt>.  Declare these attributes and intialize them in a constructor that will take a <tt>Fruit</tt> as a parameter. Initially nothing wil be store in the next <tt>Node</tt> and the previous <tt>Node</tt>. In your <tt>Node</tt> class you will also need three getters (accessors) and three setters (mutators). Write these and you can move on to the <tt>List</tt> class.  You will also need a <tt>toString()</tt> method to see what is happening in the program. Also, add a name attribute to the <tt>Fruit</tt> class and in each type of <tt>Fruit</tt> initialize name to a given name.  Fix any errors this may cause in <tt>Drop.java</tt>.
+		    </li>
+		    <li>
+		    	<b>[3 points]</b> Make a test class, as you add methods to the <tt>List</tt> class test them here so that you can see what is going on.  You will submit the output from this class so make sure that you are printing to the console.  You will be marked on testing the different cases of methods as well, make sure it all works!
+		    </li>
+			<li>
+				<b>[1 point]</b>  In your <tt>List</tt> class you will need two attributes, a <tt>Node</tt> that will keep track of the first of your list and an <tt>int</tt> that will keep track of the size of your list.  Declare these attributes and initialize them in a constructor that takes no parameters. Note that initially your list with be empty. Also write a <tt>toString()</tt> method to print the values of all the nodes in your list.
+		    </li>
+			<li>
+				In your <tt>List</tt> class you will need 7 methods. Start by writing a <tt>size()</tt> method that returns the size of the list and an <tt>isEmpty()</tt> method that returns true only if the list is empty.  Also write a <tt>showFirst()</tt> method that shows the value of the <tt>Fruit</tt> stored in the first <tt>Node</tt>.
+		    </li>
+			<li>
+				<b>[1 point]</b>Now write a method to add a <tt>Fruit</tt> to the first of your list.  This method will take a <tt>Fruit</tt> as a parameter.Use this <tt>Fruit</tt> to create a new <tt>Node</tt>.  If the <tt>first</tt> attribute in your class is <tt>null</tt>, assign this new <tt>Node</tt> to it.  Otherwise assign the <tt>previous</tt> attribute of <tt>first</tt>to the new <tt>Node</tt> using <tt>setPrevious()</tt>.  Assign the <tt>next</tt> attribute of the new <tt>Node</tt> to <tt>first</tt> using the <tt>setNext()</tt> method.  Then finally assign <tt>first</tt> to the new <tt>Node</tt> and update the size of the list to reflect this addition.
+			</li>
+			<li>
+				<b>[1 point]</b>Now write a method to remove the first <tt>Fruit</tt> from your list.  This method will return a <tt>Fruit</tt>.  Create this <tt>Fruit</tt> from the <tt>first</tt> node using the <tt>getValue()</tt> method. Assign the <tt>first</tt> attribute to the <tt>Node</tt> directly after it. You can find this node with the <tt>getNext()</tt> method.  Now assign the <tt>previous</tt> value of <tt>first</tt> to null.  This will drop all references to the old <tt>first</tt> which will mean it is deleted thanks to Java's garbage collection. Now change the size counter to reflect this deletion and return the appropriate value.  Don't forget to handle the case of trying to remove an item from an empty list.  In this case your method should return null.
+			</li>
+			<li>
+				<b>[1 point]</b>Write a method in your list class called <tt>get()</tt> that will take an <tt>int</tt> index as a parameter.  This method will need to return the Fruit stored in the node at the desired index.  First, move through the list, from front to back, until you have moved to the correct node.  Then return the value stored at that node but do NOT remove it from the list.
+		    </li>
+		    <li>
+		    	<b>[2 points]</b>Now for the final method, the <tt>remove()</tt>.  This method will remove a node from anywhere in the list and will again take an <tt>int</tt> index as a parameter and does not need to return anything.  Start by finding the node to be removed just as you did in the <tt>get</tt> method. Now we have 4 possible cases to cover:
+	    		<ul>
+	    			<li>
+	    				i) The node to be removed has both a <tt>previous</tt> and <tt>next</tt> node.
+	    			</li>
+	    			<li>
+	    				ii) The node to be removed has only a <tt>previous</tt> node.
+	    			</li>
+	    			<li>
+	    				iii) The node to be removed has only a <tt>next</tt> node.
+	    			</li>
+	    			<li>
+	    				iv) The node to be removed has niether a <tt>previous</tt> nor <tt>next</tt> node.
+	    			</li>
+	    		</ul>
+	    		In each of these cases you will need to update the <tt>next</tt> and <tt>previous</tt> node's attributes appropriately.  For example, if the node we wish to remove only has a <tt>next</tt> node we will need to set the <tt>next</tt> node's <tt>previous</tt> attribute to the value stored in the <tt>previous</tt> attribute of the node we will be removing.
+		    </li>
+			<li>
+				<b>[1 point]</b>  Finally go through your project and make changes to your <tt>Drop</tt> and <tt>Board</tt> class so that they use the list you made instead of an <tt>ArrayList</tt>.
+		    </li>
+		</ul>
+		<h2>What you should think about during this activity:</h2>
+		<ul>
+		    <li>
+		    	What advantages does a list have over an array?
+		    </li>
+			<li>
+				What would happen if you assign the <tt>next</tt> attribute a <tt> new Node()</tt> in the <tt>Node</tt> constructor?
+			</li>
+		</ul>
+	</p>
+	 <div id="section"> <h1>What to Submit</h1> </div>
+    <p>
+    When you are ready to have your lab graded, submit the following:
+    </p>
+    <ul>
+    	<li><tt>List.java</tt></li>
+    	<li><tt>Node.java</tt></li>
+    	<li><tt>Board.java</tt></li>
+    	<li><tt>Drop.java</tt></li>
+    	<li>Output from your test class</li>
+    </ul>
+</div><!-- #content-->
+</div><!-- #wrapper -->
+<div id="footer">
+    <div class="left"> <a href="lab05.html">Prev Lab</a> </div>
+    <div class="right"> <a href="lab07.html">Next Lab</a> </div>
+</div><!-- #footer -->
+</body>
+</html>
